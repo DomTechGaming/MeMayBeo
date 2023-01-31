@@ -66,6 +66,100 @@ Section:NewButton("Cybord Safe (Test)", "", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-20010.7637, 10009.4004, -25.7639999, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 
+Section:NewButton("Human/Ghoul (ON)","",function ()
+    (getgenv()).Config = {
+        ["FastAttack"] = true,
+        ["ClickAttack"] = true
+    } 
+    
+    coroutine.wrap(function()
+    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+        for v,v in pairs(getreg()) do
+            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+                    for v,v in pairs(debug.getupvalues(v)) do
+                    if typeof(v) == "table" then
+                        spawn(function()
+                            game:GetService("RunService").RenderStepped:Connect(function()
+                                if getgenv().Config['FastAttack'] then
+                                        pcall(function()
+                                            v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                            v.activeController.attacking = false
+                                            v.activeController.increment = 4
+                                            v.activeController.blocking = false   
+                                            v.activeController.hitboxMagnitude = 150
+                                            v.activeController.humanoid.AutoRotate = true
+                                            v.activeController.focusStart = 0
+                                            v.activeController.currentAttackTrack = 0
+                                            sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                        end)
+                                    end
+                                end)
+                        end)
+                    end
+                end
+            end
+        end
+    end)();
+    
+    spawn(function()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if getgenv().Config['ClickAttack'] then
+                    pcall(function()
+                    game:GetService'VirtualUser':CaptureController()
+                    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+                end)
+            end
+        end)
+    end)
+end)
+
+Section:NewButton("Human/Ghoul (OFF)","",function ()
+    (getgenv()).Config = {
+        ["FastAttack"] = false,
+        ["ClickAttack"] = false
+    } 
+    
+    coroutine.wrap(function()
+    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+        for v,v in pairs(getreg()) do
+            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+                    for v,v in pairs(debug.getupvalues(v)) do
+                    if typeof(v) == "table" then
+                        spawn(function()
+                            game:GetService("RunService").RenderStepped:Connect(function()
+                                if getgenv().Config['FastAttack'] then
+                                        pcall(function()
+                                            v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                            v.activeController.attacking = false
+                                            v.activeController.increment = 4
+                                            v.activeController.blocking = false   
+                                            v.activeController.hitboxMagnitude = 150
+                                            v.activeController.humanoid.AutoRotate = true
+                                            v.activeController.focusStart = 0
+                                            v.activeController.currentAttackTrack = 0
+                                            sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                        end)
+                                    end
+                                end)
+                        end)
+                    end
+                end
+            end
+        end
+    end)();
+    
+    spawn(function()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if getgenv().Config['ClickAttack'] then
+                    pcall(function()
+                    game:GetService'VirtualUser':CaptureController()
+                    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+                end)
+            end
+        end)
+    end)
+end)
+
 local Section = Tab:NewSection("Ancient One")
 
 Section:NewButton("Teleport","",function ()
@@ -232,65 +326,22 @@ Section:NewButton("Copy Id Server","",function ()
 end)
 
 
-Section:NewButton("FastAttack Off","",function ()
-    (getgenv()).Config = {
-        ["FastAttack"] = false,
-        ["ClickAttack"] = false
-       } 
-       coroutine.wrap(function()
-       local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
-           for v,v in pairs(getreg()) do
-               if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
-                    for v,v in pairs(debug.getupvalues(v)) do
-                       if typeof(v) == "table" then
-                           spawn(function()
-                               game:GetService("RunService").RenderStepped:Connect(function()
-                                   if getgenv().Config['FastAttack'] then
-                                        pcall(function()
-                                            v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-                                            v.activeController.attacking = false
-                                            v.activeController.increment = 4
-                                            v.activeController.blocking = false   
-                                            v.activeController.hitboxMagnitude = 150
-                                            v.activeController.humanoid.AutoRotate = true
-                                              v.activeController.focusStart = 0
-                                              v.activeController.currentAttackTrack = 0
-                                            sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
-                                        end)
-                                    end
-                                end)
-                           end)
-                       end
-                   end
-               end
-           end
-       end)();
-       spawn(function()
-           game:GetService("RunService").RenderStepped:Connect(function()
-               if getgenv().Config['ClickAttack'] then
-                    pcall(function()
-                       game:GetService'VirtualUser':CaptureController()
-                       game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
-                   end)
-               end
-           end)
-       end)
- end)
 
- Section:NewButton("FastAttack On","",function ()
+Section:NewButton("FastAttack (ON)","",function ()
     (getgenv()).Config = {
         ["FastAttack"] = true,
         ["ClickAttack"] = true
-       } 
-       coroutine.wrap(function()
-       local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
-           for v,v in pairs(getreg()) do
-               if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+    } 
+    
+    coroutine.wrap(function()
+    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+        for v,v in pairs(getreg()) do
+            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
                     for v,v in pairs(debug.getupvalues(v)) do
-                       if typeof(v) == "table" then
-                           spawn(function()
-                               game:GetService("RunService").RenderStepped:Connect(function()
-                                   if getgenv().Config['FastAttack'] then
+                    if typeof(v) == "table" then
+                        spawn(function()
+                            game:GetService("RunService").RenderStepped:Connect(function()
+                                if getgenv().Config['FastAttack'] then
                                         pcall(function()
                                             v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
                                             v.activeController.attacking = false
@@ -298,26 +349,76 @@ Section:NewButton("FastAttack Off","",function ()
                                             v.activeController.blocking = false   
                                             v.activeController.hitboxMagnitude = 150
                                             v.activeController.humanoid.AutoRotate = true
-                                              v.activeController.focusStart = 0
-                                              v.activeController.currentAttackTrack = 0
+                                            v.activeController.focusStart = 0
+                                            v.activeController.currentAttackTrack = 0
                                             sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
                                         end)
                                     end
                                 end)
-                           end)
-                       end
-                   end
-               end
-           end
-       end)();
-       spawn(function()
-           game:GetService("RunService").RenderStepped:Connect(function()
-               if getgenv().Config['ClickAttack'] then
+                        end)
+                    end
+                end
+            end
+        end
+    end)();
+    
+    spawn(function()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if getgenv().Config['ClickAttack'] then
                     pcall(function()
-                       game:GetService'VirtualUser':CaptureController()
-                       game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
-                   end)
-               end
-           end)
-       end)
- end)
+                    game:GetService'VirtualUser':CaptureController()
+                    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+                end)
+            end
+        end)
+    end)
+end)
+
+
+
+Section:NewButton("Fast Attack (OFF)","",function ()
+    (getgenv()).Config = {
+        ["FastAttack"] = false,
+        ["ClickAttack"] = false
+    } 
+    
+    coroutine.wrap(function()
+    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+        for v,v in pairs(getreg()) do
+            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+                    for v,v in pairs(debug.getupvalues(v)) do
+                    if typeof(v) == "table" then
+                        spawn(function()
+                            game:GetService("RunService").RenderStepped:Connect(function()
+                                if getgenv().Config['FastAttack'] then
+                                        pcall(function()
+                                            v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                            v.activeController.attacking = false
+                                            v.activeController.increment = 4
+                                            v.activeController.blocking = false   
+                                            v.activeController.hitboxMagnitude = 150
+                                            v.activeController.humanoid.AutoRotate = true
+                                            v.activeController.focusStart = 0
+                                            v.activeController.currentAttackTrack = 0
+                                            sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                        end)
+                                    end
+                                end)
+                        end)
+                    end
+                end
+            end
+        end
+    end)();
+    
+    spawn(function()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if getgenv().Config['ClickAttack'] then
+                    pcall(function()
+                    game:GetService'VirtualUser':CaptureController()
+                    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+                end)
+            end
+        end)
+    end)
+end)

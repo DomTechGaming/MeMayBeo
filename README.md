@@ -265,7 +265,6 @@ Section:NewButton("FastAttack Off","",function ()
                end
            end
        end)();
-       
        spawn(function()
            game:GetService("RunService").RenderStepped:Connect(function()
                if getgenv().Config['ClickAttack'] then
@@ -311,7 +310,6 @@ Section:NewButton("FastAttack Off","",function ()
                end
            end
        end)();
-       
        spawn(function()
            game:GetService("RunService").RenderStepped:Connect(function()
                if getgenv().Config['ClickAttack'] then

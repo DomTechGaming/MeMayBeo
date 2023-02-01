@@ -71,7 +71,6 @@ Section:NewButton("Human/Ghoul (ON)","",function ()
         ["FastAttack"] = true,
         ["ClickAttack"] = true
     } 
-    
     coroutine.wrap(function()
     local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
         for v,v in pairs(getreg()) do
@@ -99,8 +98,7 @@ Section:NewButton("Human/Ghoul (ON)","",function ()
                 end
             end
         end
-    end)();
-    
+    end)()
     spawn(function()
         game:GetService("RunService").RenderStepped:Connect(function()
             if getgenv().Config['ClickAttack'] then
@@ -118,7 +116,6 @@ Section:NewButton("Human/Ghoul (OFF)","",function ()
         ["FastAttack"] = false,
         ["ClickAttack"] = false
     } 
-    
     coroutine.wrap(function()
     local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
         for v,v in pairs(getreg()) do
@@ -146,8 +143,7 @@ Section:NewButton("Human/Ghoul (OFF)","",function ()
                 end
             end
         end
-    end)();
-    
+    end)()
     spawn(function()
         game:GetService("RunService").RenderStepped:Connect(function()
             if getgenv().Config['ClickAttack'] then
@@ -406,7 +402,6 @@ Section:NewButton("FastAttack (ON)","",function ()
         ["FastAttack"] = true,
         ["ClickAttack"] = true
     } 
-    
     coroutine.wrap(function()
     local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
         for v,v in pairs(getreg()) do
@@ -434,8 +429,7 @@ Section:NewButton("FastAttack (ON)","",function ()
                 end
             end
         end
-    end)();
-    
+    end)()
     spawn(function()
         game:GetService("RunService").RenderStepped:Connect(function()
             if getgenv().Config['ClickAttack'] then
@@ -455,7 +449,6 @@ Section:NewButton("Fast Attack (OFF)","",function ()
         ["FastAttack"] = false,
         ["ClickAttack"] = false
     } 
-    
     coroutine.wrap(function()
     local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
         for v,v in pairs(getreg()) do
@@ -483,8 +476,7 @@ Section:NewButton("Fast Attack (OFF)","",function ()
                 end
             end
         end
-    end)();
-    
+    end)()
     spawn(function()
         game:GetService("RunService").RenderStepped:Connect(function()
             if getgenv().Config['ClickAttack'] then
@@ -504,3 +496,30 @@ local Section = Tab:NewSection("GUI")
 Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

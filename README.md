@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("DomTech Hub", "DarkTheme")
 local remotePath = game:GetService("ReplicatedStorage").Remotes
-
+local plr = PLayers.LocalPlayer
 local Tab = Window:NewTab("Races V4")
 --Races V4 Teleport
 local Section = Tab:NewSection("Teleport")
@@ -464,9 +464,7 @@ end)
 
 Section:NewButton("FastAttack (ON)","",function ()
     local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
- 
     local plr = game.Players.LocalPlayer
-     
     local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
     local CbFw2 = CbFw[2]
      
@@ -610,6 +608,54 @@ Section:NewButton("Fast Attack (OFF)","",function ()
     end
 end)
 
+
+Section:NewButton("Improve Hitbox","",function ()
+    (getgenv()).Config = {
+        ["FastAttack"] = true,
+        ["ClickAttack"] = false
+    } 
+    
+    coroutine.wrap(function()
+    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+        for v,v in pairs(getreg()) do
+            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+                    for v,v in pairs(debug.getupvalues(v)) do
+                    if typeof(v) == "table" then
+                        spawn(function()
+                            game:GetService("RunService").RenderStepped:Connect(function()
+                                if getgenv().Config['FastAttack'] then
+                                        pcall(function()
+                                            v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                            v.activeController.attacking = false
+                                            v.activeController.increment = 4
+                                            v.activeController.blocking = false   
+                                            v.activeController.hitboxMagnitude = 150
+                                            v.activeController.humanoid.AutoRotate = true
+                                            v.activeController.focusStart = 0
+                                            v.activeController.currentAttackTrack = 0
+                                            sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                        end)
+                                    end
+                                end)
+                        end)
+                    end
+                end
+            end
+        end
+    end)();
+    
+    spawn(function()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if getgenv().Config['ClickAttack'] then
+                    pcall(function()
+                    game:GetService'VirtualUser':CaptureController()
+                    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+                end)
+            end
+        end)
+    end)
+end)
+
 --Setting
 local Tab = Window:NewTab("Setting")
 local Section = Tab:NewSection("GUI")
@@ -617,8 +663,3 @@ local Section = Tab:NewSection("GUI")
 Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
-
-
-
-
-

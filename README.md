@@ -445,14 +445,22 @@ Section:NewButton("Player Hunter Quest","",function ()
     }
     remotePath.CommF_:InvokeServer(unpack(args))
 end)
-
+--Server
 local Section = Tab:NewSection("Server")
 
 Section:NewButton("Copy Id Server","",function ()
     setclipboard(game.JobId)
 end)
 
-
+Section:NewButton("Rejoin","",function ()
+    local ts = game:GetService("TeleportService")
+    local p = game:GetService("Players").LocalPlayer
+    ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
+end)
+Section:NewButton("Hop Server","",function ()
+    local Handler = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Rain-Design/Public/main/Serverhop')))()
+    Handler:Teleport()
+end)
 
 Section:NewButton("FastAttack (ON)","",function ()
     local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
@@ -609,3 +617,8 @@ local Section = Tab:NewSection("GUI")
 Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
+
+
+
+
+

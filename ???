@@ -168,7 +168,8 @@ end)
 
 Section:NewButton("Complete Train Seasons","",function ()
     local args = {
-        [1] = "Ancient One"
+        [1] = "UpgradeRace",
+        [2] = "Buy"
     }
     remotePath.CommF_:InvokeServer(unpack(args))
 end)
@@ -504,4 +505,31 @@ local Section = Tab:NewSection("GUI")
 Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

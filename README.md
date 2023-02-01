@@ -13,7 +13,7 @@ end)
 Section:NewButton("Clever","", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28575.1172, 14937.8594, 72.9514847, -0.999999166, 1.95918357e-08, 0.00129557389, 1.96037959e-08, 1, 9.21894028e-09, -0.00129557389, 9.24433063e-09, -0.999999166)
 end)
-
+--Gate Races 4
 local Section = Tab:NewSection("Teleport 1")
 
 Section:NewButton("Shark Gate V4","", function()
@@ -51,7 +51,7 @@ Section:NewButton("Sky Gate V4", "", function()
     wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28964.4375, 14919.3066, 234.451019, 0.0190088041, -2.2531963e-09, -0.999819338, -4.91191798e-08, 1, -3.18746896e-09, 0.999819338, 4.91708931e-08, 0.0190088041)
 end)
---Complete
+--Complete Races
 local Section = Tab:NewSection("Complete Trials")
 
 Section:NewButton("Rabbit V4", "", function()
@@ -159,7 +159,7 @@ Section:NewButton("Human/Ghoul (OFF)","",function ()
         end)
     end)
 end)
-
+--Complete Train Seasons
 local Section = Tab:NewSection("Ancient One")
 
 Section:NewButton("Teleport","",function ()
@@ -188,7 +188,89 @@ end)
 Section:NewButton("TurTle Centre", "", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11993.5801, 331.833496, -8844.18262, 1, -8.28384472e-08, -4.21672869e-13, 8.28384472e-08, 1, 4.91729288e-08, 4.17599467e-13, -4.91729288e-08, 1)
 end)
---Melee
+--Teleport Bypassed
+local Section = Tab:NewSection("Teleport Bypassed")
+
+Section:NewButton("Castle On The Sea","", function ()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5010.26758, 314.54129, -3006.60425, -0.362993836, 0, 0.931791544, 0, 1, 0, -0.931791544, 0, -0.362993836)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+
+Section:NewButton("Port Town", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-287.7612, 6.7557435, 5369.76367, 0.965929627, 0, -0.258804798, 0, 1, 0, 0.258804798, 0, 0.965929627)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Hydra Town", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5016.74414, 601.60907, 346.040955, -1.19209275e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209275e-07)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Hydra Erea", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4696.50586, 51.4788551, -1408.64465, 0.156445965, 0, 0.987686515, 0, 1, 0, -0.987686515, 0, 0.156445965)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Great Tree", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2329.72852, 25.913353, -6543.3501, -0.820017219, 0, 0.57233882, 0, 1, 0, -0.57233882, 0, -0.820017219)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Floating TurTle", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11335.1406, 331.748993, -10393.8574, 0.950096607, 1.10389927e-07, -0.311955869, -1.01733356e-07, 1, 4.40235794e-08, 0.311955869, -1.00903366e-08, 0.950096607)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Masion", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12550.3691, 337.194061, -7487.29688, 0.999857068, -3.99413764e-08, 0.016907528, 3.8280664e-08, 1, 9.85469555e-08, -0.016907528, -9.7885632e-08, 0.999857068)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Haunted Castle", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9515.32617, 142.130615, 5514.80713, 0.999856889, -3.82866219e-08, 0.0169185121, 3.66937023e-08, 1, 9.44629122e-08, -0.0169185121, -9.38285893e-08, 0.999856889)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Peanut Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2038.69165, 9.70184898, -9932.74609, -0.998342454, 0, 0.0575529113, 0, 1, 0, -0.0575529113, 0, -0.998342454)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Ice Cream Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-911.008972, 56.2765846, -10851.7354, -0.820313871, 8.58472831e-08, 0.57191354, 3.86293948e-08, 1, -9.46979739e-08, -0.57191354, -5.55893891e-08, -0.820313871)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Cake Land", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1948.26306, 37.8240738, -11868.5078, -0.952151656, -1.08799334e-08, -0.305626035, -2.29550512e-08, 1, 3.59156473e-08, 0.305626035, 4.12128038e-08, -0.952151656)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Chocolate Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(41.1548729, 20.5485172, -12020.2207, 0.712117553, -3.07325658e-11, 0.702060223, 2.51380716e-09, 1, -2.50604359e-09, -0.702060223, 3.54944185e-09, 0.712117553)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Xmas Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1038.45667, 14.8213234, -14110.0059, -0.985374391, -4.04517664e-08, -0.17040354, -3.75880482e-08, 1, -2.00316581e-08, 0.17040354, -1.33335458e-08, -0.985374391)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+--Melee Changes
 local Tab = Window:NewTab("Melee")
 local Section = Tab:NewSection("Melee V1")
 
@@ -264,14 +346,6 @@ Section:NewButton("Godhuman", "", function()
         [1] = "BuyGodhuman"
     }
     remotePath.CommF_:InvokeServer(unpack(args))
-end)
-
---Setting
-local Tab = Window:NewTab("Setting")
-local Section = Tab:NewSection("GUI")
-
-Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
-	Library:ToggleUI()
 end)
 
 --Shop
@@ -421,4 +495,12 @@ Section:NewButton("Fast Attack (OFF)","",function ()
             end
         end)
     end)
+end)
+
+--Setting
+local Tab = Window:NewTab("Setting")
+local Section = Tab:NewSection("GUI")
+
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
 end)
